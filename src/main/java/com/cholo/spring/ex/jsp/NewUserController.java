@@ -34,29 +34,29 @@ public class NewUserController {
 //	@RequestMapping(path="/add", method=RequestMethod.POST)
 	@PostMapping("/add")
 	@ResponseBody
-	public String addUser(
-			@RequestParam("name") String name
-			, @RequestParam("birthday") String birthday
-			, @RequestParam("email") String email
-			, @RequestParam("introduce") String introduce) {
-		
+//	public String addUser(
+//			@RequestParam("name") String name
+//			, @RequestParam("birthday") String birthday
+//			, @RequestParam("email") String email
+//			, @RequestParam("introduce") String introduce) {
+//		
 		/*
 		 * int count = newUserBO.addUser(name, birthday, email, introduce);
 		 * 
 		 * return "삽입결과 : " + count;
 		 */
-		
-		NewUser user = new NewUser();
-		user.setName(name);
-		user.setYyyymmdd(birthday);
-		user.setEmail(email);
-		user.setIntroduce(introduce);
-		
-		newUserBO.addUserByDbject(user);
-		
-		model.addAttribute("user", user);
-		return "/jsp/input";
-	}
+//		
+//		NewUser user = new NewUser();
+//		user.setName(name);
+//		user.setYyyymmdd(birthday);
+//		user.setEmail(email);
+//		user.setIntroduce(introduce);
+//		
+//		newUserBO.addUserByDbject(user);
+//		
+//		model.addAttribute("user", user);
+//		return "/jsp/input";
+	//}
 	
 	// 입력화면
 	@GetMapping("/input")

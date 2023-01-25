@@ -26,7 +26,7 @@ public class NewUserBO {
 		return newUserDAO.insertUser(name, birthday, email, introduce);
 	}
 	
-	public int addUser
+
 	
 
 }
