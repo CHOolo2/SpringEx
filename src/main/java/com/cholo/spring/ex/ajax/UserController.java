@@ -63,5 +63,25 @@ public class UserController {
 	public String userInput() {
 		return "ajax/user/input";
 	}
+	
+	//email 주소를 전달 받고, 해당 주소가 new_user 테이블에 존재하는지 확인 API
+	//email 중복여부 확인 API
+	@GetMapping("/is_duplicate")
+	@ResponseBody
+	public Map<String, Boolean> isDuplicateEmail(@RequestParam("email")String email) {
+		
+		//중복된 경우{"is_duplicate":true}
+		//중복되지 않은 경우{"is_duplicate":false}
+		Map<String, Boolean> result = new HashMap<>();
+		
+		if(userBO.isDuplicateEmail(email)) { //중복된 경우
+			result.put("is_duplicate",true);
+		}else{ //중복되지 않는 경우
+			result.put("is_duplicate",false);
+		}
+		return result;
+	}
+	
+	
 
 }
